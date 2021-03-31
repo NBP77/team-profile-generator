@@ -112,10 +112,27 @@ function addIntern() {
         const idNumber = data.idNumber
         const email = data.email
         const internsSchool = data.internsSchool
-        const teamMember = new Engineer(internsName, idNumber, email, internsSchool)
+        const teamMember = new Intern(internsName, idNumber, email, internsSchool)
         finalTeamArray.push(teamMember)
         addTeamMembers();
     });
 };
 
 // Put team together in html using template literals 
+
+function completeTeam() {
+    console.log('----Your team is now ready to role!----')
+
+    const htmlArray = []
+    const htmlStart = `
+// Put HMTL in here with Template literals
+    
+    
+    
+    
+    
+    `
+
+
+
+}
