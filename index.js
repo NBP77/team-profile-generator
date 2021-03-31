@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const style = require('./main/css.style')
+// const style = require("../main/style.css")
 
 const Employee = require('./lib/Employee')
 const Manager = require('./lib/Manager')
@@ -12,7 +12,7 @@ let finalTeamArray = []
 function startPrompt() {
   inquirer.prompt([
     {
-        message: "Welcome to Team Generator 5000! Please write your team name:",
+        message: "Please write your team name:",
         name: "teamname"
     }
 ])
@@ -26,9 +26,30 @@ function startPrompt() {
 }
 
 function addTeamMembers() {
-addEngineer();
-addIntern();
-completeTeam();
+  inquirer.prompt([
+      {
+          type: "list",
+          message: "Would you like to add more team members?",
+          choices: ["Yes, add an engineer", "Yes, add an intern", "No, my team is complete"],
+          name: "addMemberData"
+      }
+  ])
+
+      .then(function (data) {
+
+          switch (data.addMemberData) {
+              case "Yes, add an engineer":
+                  addEngineer();
+                  break;
+
+              case "Yes, add an intern":
+                  addIntern();
+                  break;
+              case "No, my team is complete":
+                completeTeam();
+                  break;
+          }
+      });
 }
 
 
@@ -39,7 +60,7 @@ function addManager() {
     inquirer.prompt([
         {
         message: "----What is your Managers name?----",
-        name: "managerName"
+        name: "name"
     },
     {
         type: "number",
@@ -62,11 +83,11 @@ function addManager() {
 
 
     .then(function (data) {
-        const managerName = data.managerName
+        const name = data.name
         const id = data.id
         const email = data.email
         const officeNumber = data.officeNumber
-        const teamMember = new Manager(managerName, id, email, officeNumber)
+        const teamMember = new Manager(name, id, email, officeNumber)
         finalTeamArray.push(teamMember)
         addTeamMembers();
     });
@@ -80,7 +101,7 @@ function addEngineer() {
     inquirer.prompt([
         {
         message: "----What is your Engineers name?----",
-        name: "engineersName"
+        name: "name"
     },
     {
         type: "number",
@@ -92,19 +113,19 @@ function addEngineer() {
         name: "email"
     },
     {   
-        type: "number",
+        
         message: "----What is your Engineers GitHub Username?----",
-        name: "githubUsername"
+        name: "github"
     },
 
 ])
 
     .then(function (data) {
-        const engineersName = data.engineersName
+        const name = data.name
         const id = data.id
         const email = data.email
-        const githubUsername = data.githubUsername
-        const teamMember = new Engineer(engineersName, id, email, githubUsername)
+        const github = data.github
+        const teamMember = new Engineer(name, id, email, github)
         finalTeamArray.push(teamMember)
         addTeamMembers();
     });
@@ -116,7 +137,7 @@ function addIntern() {
     inquirer.prompt([
         {
         message: "----What is your Interns name?----",
-        name: "internsName"
+        name: "name"
     },
     {
         type: "number",
@@ -128,19 +149,18 @@ function addIntern() {
         name: "email"
     },
     {   
-        type: "number",
         message: "----What school did your Intern go to?----",
-        name: "internsSchool"
+        name: "school"
     },
 
 ])
 
     .then(function (data) {
-        const internsName = data.internsName
+        const name = data.name
         const id = data.id
         const email = data.email
-        const internsSchool = data.internsSchool
-        const teamMember = new Intern(internsName, id, email, internsSchool)
+        const school = data.school
+        const teamMember = new Intern(name, id, email, school)
         finalTeamArray.push(teamMember)
         addTeamMembers();
     });
@@ -167,7 +187,7 @@ function completeTeam() {
         />
         <link rel="stylesheet" href="../main/style.css" />
         <style>
-          ${style}
+         
         </style>
       </head>
     
@@ -193,26 +213,28 @@ function completeTeam() {
                     <li>${finalTeamArray[i].name}</li>
                     <li>${finalTeamArray[i].title}</li>
                     <li>ID: ${finalTeamArray[i].id}</li>
-                    <li>Email: <a href="mailto:${finalTeamArray[i].email}">${finalTeamArray[i].email}</a></li>
+                    <li>Email: <a href="mailto:${finalTeamArray[i].email} target="_blank">${finalTeamArray[i].email}</a></li>
                   </ul>
                 </div>
-              </div>
+              
             </div>
             `
     
             if (finalTeamArray[i].officeNumber) {
               object += `
-              <p>${finalTeamArray[i].officeNumber}</p>
+              <p>Office Number: ${finalTeamArray[i].officeNumber}</p>
               `
             }
             if (finalTeamArray[i].github) {
               object += `
-              <p>GitHub: <a href="https://github.com/${finalTeamArray[i].github}">${finalTeamArray[i].github}</a></p>
+              <p>GitHub: <a href="https://github.com/${finalTeamArray[i].github}" target="_blank>${finalTeamArray[i].github}</a></p>
               `
             }
             if (finalTeamArray[i].school) {
               object += `
               <p>School: ${finalTeamArray[i].school}</p>
+              
+
               `
           }
           object += `
