@@ -1,0 +1,21 @@
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.section {
+    background-color: #4831d4;
+}
+
+.title {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 100px;
+    color: #ccf381;
+}
+
+
+.card {
+    background-color: #4831d4;
+    color: #ccf381;
+    font-size: 30px;
+}

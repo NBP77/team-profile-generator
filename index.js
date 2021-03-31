@@ -137,7 +137,7 @@ function completeTeam() {
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="../dist/style.css" />
+    <link rel="stylesheet" href="../main/style.css" />
     <style>
     ${style}
   </head>
