@@ -28,7 +28,7 @@ Test results video: <iframe src="https://drive.google.com/file/d/1qiIatX-vVkTpuZ
 Test results link: https://drive.google.com/file/d/1qiIatX-vVkTpuZHkYVvmlRdmiQj0tW1L/view
 
 ## Usage
-s
+
 Examples:
 
 -Installed Node Inquirer
