@@ -19,12 +19,16 @@ To check the project, I worked on click on these links:
 
 GitHub: https://github.com/NBP77/team-profile-generator
 
-Video: 
+Page Maker Video: <iframe src="https://drive.google.com/file/d/1_X5_Fqf2-mZbk-Fg2rKnfcWrdi_C19lM/preview" width="640" height="480"></iframe>
 
-Link: 
+Page maker link: https://drive.google.com/file/d/1_X5_Fqf2-mZbk-Fg2rKnfcWrdi_C19lM/view
+
+Test results video: <iframe src="https://drive.google.com/file/d/1qiIatX-vVkTpuZHkYVvmlRdmiQj0tW1L/preview" width="640" height="480"></iframe>
+
+Test results link: https://drive.google.com/file/d/1qiIatX-vVkTpuZHkYVvmlRdmiQj0tW1L/view
 
 ## Usage
-
+s
 Examples:
 
 -Installed Node Inquirer
@@ -38,6 +42,8 @@ Examples:
 -Very easy UI that organizes team members for easy access to information about them
 
 -Organized test and files 
+
+-Has a generated-html folder for an example 
 
 ## Credits
 
