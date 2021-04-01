@@ -213,7 +213,7 @@ function completeTeam() {
                     <li>${finalTeamArray[i].name}</li>
                     <li>${finalTeamArray[i].title}</li>
                     <li>ID: ${finalTeamArray[i].id}</li>
-                    <li>Email: <a href="mailto:${finalTeamArray[i].email} target="_blank">${finalTeamArray[i].email}</a></li>
+                    <p>Email: <a href="mailto:${finalTeamArray[i].email}">${finalTeamArray[i].email}</a></p>
                   </ul>
                 </div>
               
@@ -227,7 +227,7 @@ function completeTeam() {
             }
             if (finalTeamArray[i].github) {
               object += `
-              <p>GitHub: <a href="https://github.com/${finalTeamArray[i].github}" target="_blank>${finalTeamArray[i].github}</a></p>
+              <p>GitHub: <a href="https://github.com/${finalTeamArray[i].github}">${finalTeamArray[i].github}</a></p>
               `
             }
             if (finalTeamArray[i].school) {
